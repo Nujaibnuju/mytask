@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Employee</title>
+</head>
+<body>
+
+<h2>Edit Employee</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <input type="text" name="name" value="{{ emp.name }}" placeholder="Name"><br><br>
+
+    <input type="text" name="role" value="{{ emp.Role }}" placeholder="Role"><br><br>
+
+    <input type="email" name="email" value="{{ emp.Email }}" placeholder="Email"><br><br>
+
+    <select name="department">
+        {% for d in departments %}
+            <option value="{{ d.id }}" {% if d.id == emp.department.id %}selected{% endif %}>
+                {{ d.name }}
+            </option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <button type="submit">Update</button>
+</form>
+
+</body>
+</html>

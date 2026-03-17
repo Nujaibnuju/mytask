@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Details</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+
+    <h2>{{ emp.name }}</h2>
+
+    <p><b>Role:</b> {{ emp.Role }}</p>
+    <p><b>Department:</b> {{ emp.department.name }}</p>
+    <p><b>Email:</b> {{ emp.Email }}</p>
+
+    <a href="{% url 'Employee_list' %}">Back to List</a>
+
+</div>
+
+</body>
+</html>
